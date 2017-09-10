@@ -7,21 +7,16 @@ body {
 
 
 #logo {
-	
-	padding: 150px 35px;
+	padding: 50px 0;
 	color: #7C064D;
 	display: inline;
-	font-size: 500%;
-	position: relative;
-		
+	font-size: 550%;
+	position: relative;		
 }
 
-.container-fluid {
-	
+.cabecalho {	
 	margin-bottom: 30px;	
-	
-	
-	padding: 30px;
+	padding: 30px 40px;
 }
 
 
@@ -31,6 +26,234 @@ span {
 
 #logofatecpg {
 	position: relative;
-	top: 15px;
+	padding-bottom: 50px;
 	float: right;
+}
+
+.retangulo {
+	width: 50px;
+	height: 70px;
+	background-color: #7C064D;
+	
+	transition: background-color 1s;
+	border: 1px solid black;
+	margin: 5px;
+}
+
+.retangulo a {
+	text-decoration: none;
+	color: #E20049;
+	transition: color 0.3s;
+
+}
+
+.texto {
+	text-align: center;
+	position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.retangulo:hover {
+	background-color: #F9DDAC;
+	
+}
+
+.retangulo:hover a {
+	color: black;
+}
+
+#menu {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#explicacao {
+	font-size: 150%;
+	text-align: justify;
+    text-justify: inter-word;
+}
+
+#equipe {
+	text-align: center;
+	background-color: #f9ddac;
+	padding: 30px 40px;
+}
+
+#equipe h2 {
+	font-size: 300%;
+	margin-bottom: 30px;
+}
+
+
+#foto img {
+	border: 2px solid black;
+	filter: grayscale(100%);
+	transition: filter 0.5s;
+	transition: border 0.5s;
+
+}
+
+#descricao {
+	margin: 20px 0;
+}
+
+#descricao h3 {
+	font-size: 275%;
+}
+
+.social [class*="fa fa-"] {
+    background-color: #333;
+    border-radius: 30px;
+    color: #fff;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    margin: auto 3px;
+    width: 35px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease 0s;
+}
+
+.fa-twitter:hover { 
+    background-color: #46c0fb; 
+}
+
+#primeiro-membro, #segundo-membro, #terceiro-membro, #quarto-membro {
+	opacity: 0;
+}
+
+#primeiro-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#segundo-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#terceiro-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#quarto-membro:hover #foto img{
+	filter: grayscale(0%);
+}
+
+#primeiro-membro:hover #foto img{
+	border: 2px solid #7C064D;
+}
+
+#segundo-membro:hover #foto img{
+	filter: grayscale(0%);
+	border: 2px solid #7C064D;
+}
+
+#terceiro-membro:hover #foto img{
+	filter: grayscale(0%);
+	border: 2px solid #7C064D;
+}
+
+#quarto-membro:hover #foto img{
+	filter: grayscale(0%);
+	border: 2px solid #7C064D;
+}
+
+
+#primeiro-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#primeiro-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#primeiro-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#segundo-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#segundo-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#segundo-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#terceiro-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#terceiro-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#terceiro-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#quarto-membro:hover .social .fa-facebook{
+	background-color: #3b5998;
+}
+
+#quarto-membro:hover .social .fa-github{
+	background-color: #6e5494;
+}
+
+#quarto-membro:hover .social .fa-linkedin{
+	background-color: #0077B5;
+}
+
+#quarto-membro:hover #descricao h3{
+	color: #7C064D;
+}
+
+#terceiro-membro:hover #descricao h3{
+	color: #7C064D;
+}
+
+#primeiro-membro:hover #descricao h3{
+	color: #7C064D;
+}
+
+#segundo-membro:hover #descricao h3{
+	color: #7C064D;
+}
+
+footer {
+	background-color: #7C064D;
+	color: #E20049;
+	float: left;
+	text-align: center;
+
+}
+
+footer h4 {
+	
+	display: inline-block;
+	margin: 0;
+	padding: 25px 10px 25px 0px;
+	vertical-align: middle;
+	font-size: 100%;
+	
+}
+
+footer img {
+	padding: 10px;
+	float: right;
+}
+
+footer a {
+	text-decoration: none;
+	color: inherit;
+}
+
+footer a:hover {
+	color: white;
 }
