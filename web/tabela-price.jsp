@@ -9,17 +9,29 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tabela PriceJSP Page</title>
+        <title>Tabela Price</title>
     </head>
-    <body>
-        <h1>Tabela Price</h1>
-        
-        
-        
-        
-        
-        
-        
-        
+    <body
+       <%--<%@include file="WEB-INF/jspf/menu.jspf" %>--%>
+       <h1><b>Tabela Price</h1></b><br/><br/>
+
+        <% 
+           String vprinc = "", juros = "", periodo = "";
+           if(request.getParameter("sendForm")!=null){
+           vprinc = request.getParameter("vprinc");
+           juros = request.getParameter("juros");
+           periodo = request.getParameter("periodo");
+           }
+        %>
+        <form>
+            Valor Principal:<br/>
+            <input type="text" name="nome" value="<%=vprinc%>"><br/>
+            Juros:<br/>
+            <input type="text" name="idade" value="<%=juros%>"><br/>
+            Período:<br/>
+            <input type="text" name="idade" value="<%=periodo%>"><br/><br/>
+            <input type="submit" name="sendForm" value="Enviar"><br/>
+        </form>  
+           
     </body>
 </html>
