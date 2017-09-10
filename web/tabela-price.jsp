@@ -12,6 +12,7 @@
         <title>Tabela Price</title>
     </head>
     <body
+       <%--<%@include file="WEB-INF/jspf/cabecalho.jspf" %>--%> 
        <%--<%@include file="WEB-INF/jspf/menu.jspf" %>--%>
        <h1><b>Tabela Price</h1></b><br/><br/>
 
@@ -23,6 +24,15 @@
            periodo = request.getParameter("periodo");
            }
         %>
+         <%
+             //declarando do valor principal, juros e periodo como double
+          double vp = 0, j = 0, p = 0;
+          try{
+              vp = Integer.parseInt(request.getParameter("vp"));
+              j = Integer.parseInt(request.getParameter("j"));
+              p = Integer.parseInt(request.getParameter("p"));
+          }catch(Exception ex){}
+        %>
         <form>
             Valor Principal:<br/>
             <input type="text" name="nome" value="<%=vprinc%>"><br/>
@@ -31,7 +41,9 @@
             Período:<br/>
             <input type="text" name="idade" value="<%=periodo%>"><br/><br/>
             <input type="submit" name="sendForm" value="Enviar"><br/>
-        </form>  
+        </form> 
+            
+            
            
     </body>
 </html>
