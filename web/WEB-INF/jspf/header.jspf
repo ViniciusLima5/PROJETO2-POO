@@ -1,3 +1,56 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<h2>Hello World!</h2>
+<head>
+    
+        <link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="res/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="res/styles.css">
+        <script src="res/jquery/jquery.min.js"></script>
+        <script src="res/popper/popper.min.js"></script>
+        <script src="res/bootstrap/js/bootstrap.min.js"></script>
+        <script src="res/typeit/typeit.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <title>Calculadora de amortização</title>
+
+</head>
+
+<body>
+    
+    <div class="container-fluid cabecalho">
+        
+        <h1 id="logo">Calculadora de amortização<span class="type-it"></span></h1>
+
+        <img id="logofatecpg" src="res/img/logo.png" width="175px" height="175x">
+        
+    </div>
+    
+    <div class="clearfix"></div>
+
+    <script type="text/javascript">
+        
+        $('.type-it').typeIt({
+
+            cursor: false,
+            deleteSpeed: 150,
+            lifeLike: false,
+            loop: true,
+            startDelay: 500
+
+        })
+        
+            .tiSettings({speed:150})
+            .tiType('price')
+            .tiPause(2000)
+            .tiDelete(5)   
+            .tiType('americana')
+            .tiPause(2000)
+            .tiDelete(9)
+            .tiType('constante')
+            .tiPause(2000);
+
+    </script>
+        
+</body>

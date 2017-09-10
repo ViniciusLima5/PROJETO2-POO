@@ -1,0 +1,12 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<footer class="container-fluid">
+        
+        <nav>
+            <a href="home.jsp"><h4>HOME</h4></a>
+            <a href="amortizacao-americana.jsp"><h4>AMORTIZAÇÃO AMERICANA</h4></a>
+            <a href="amortizacao-constante.jsp"><h4>AMORTIZAÇÃO CONSTANTE</h4></a>
+            <a href="tabela-price.jsp"><h4>TABELA PRICE</h4></a>
+        </nav>
+
+</footer>
