@@ -1,0 +1,36 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #FFEED0;
+	font-family: 'Economica', sans-serif;
+}
+
+
+#logo {
+	
+	padding: 150px 35px;
+	color: #7C064D;
+	display: inline;
+	font-size: 500%;
+	position: relative;
+		
+}
+
+.container-fluid {
+	
+	margin-bottom: 30px;	
+	
+	
+	padding: 30px;
+}
+
+
+span {
+	color: #E20049;
+}
+
+#logofatecpg {
+	position: relative;
+	top: 15px;
+	float: right;
+}
