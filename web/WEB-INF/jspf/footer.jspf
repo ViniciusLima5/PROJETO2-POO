@@ -1,6 +1,6 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<footer class="container-fluid">
+<footer class="container-fluid" id="wrapper">
         
         <nav>
             <a href="home.jsp"><h4>HOME</h4></a>
