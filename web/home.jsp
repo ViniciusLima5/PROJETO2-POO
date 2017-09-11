@@ -15,7 +15,7 @@
     </div>
 
     <div class="container-fluid" id="equipe">
-        <h2 id="equipe-logo">EQUIPE</h2>
+        <h2 id="equipe-logo">EQUIPE <i id="coracao" style="color:red;" class="fa fa-heart" aria-hidden="false"></i></h2>
 
         <div class="row">
             <div class="col-md-3 col-sm-6" id="primeiro-membro" class="membro">
@@ -90,9 +90,10 @@
                     $("#segundo-membro").fadeTo('slow', 1, function() {
                         $("#terceiro-membro").fadeTo('slow', 1, function() {
                             $("#quarto-membro").fadeTo('slow', 1, function() {
-                                $("#equipe-logo").html('EQUIPE <i style="color:red;" class="fa fa-heart" aria-hidden="false"></i>');
-                                
+                                $("#coracao").fadeTo('slow', 1, function() {
+                                                                   
 
+                                }); 
                             }); 
                         }); 
                     });  
