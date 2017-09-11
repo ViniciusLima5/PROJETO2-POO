@@ -5,6 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" type="image/x-icon" href="res/img/icon.ico" />
         <link rel="stylesheet" href="res/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="res/styles.css">
         <script src="res/jquery/jquery.min.js"></script>
