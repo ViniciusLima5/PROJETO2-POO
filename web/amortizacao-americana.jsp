@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <%@include file="WEB-INF/jspf/header.jspf" %>
@@ -6,53 +7,132 @@
     
     <%@include file="WEB-INF/jspf/menu.jspf" %>    
         
-    <%
-        //declaração das variáveis
-        double d=0; //Divida
-        double p=0; //Parcelas
-        double j=0; //Juros
-
-        %>
-    
-    
     <div class="container" id="explicacao">
         
-        <p>O Sistema de Amortização Americano é uma forma de pagamento de empréstimos que se caracteriza pelo pagamento apenas dos juros da dívida,deixando o valor da dívida constante, que pode ser paga em apenas um único pagamento.</p>
-        
-        <p>Esse sistema de amortização tem a vantagem em relação ao sistema de pagamento único, pois nele não há incidência de juros sobre juros.</p>
-        
-        <p>Os juros sempre incidem sobre o valor original da dívida. Com isso o devedor pode quitar sua dívida quando quiser.</p>
+            <p>O Sistema de Amortização Americano é uma forma de pagamento de empréstimos que se caracteriza pelo pagamento apenas dos juros da dívida,deixando o valor da dívida constante, que pode ser paga em apenas um único pagamento.</p>
 
-        <p>Tem como desvantagem que o pagamento de juros pode, em tese, ser perpétuo mesmo quando já se pagou o equivalente à dívida em si. Para isso, basta que o número de prestações exceda 100% quando da soma dos juros simples.</p>
-        
-        <form>
-            <p>Valor da dívida:</p>
-            <input type="text" name="valorDaDivida" value=""><br/>
-            <p>Juros:</p>
-            <input type="text" name="juros" value=""><br/>
-            <p>Como pretende pagar a divida:</p>
-            <select id="seletor" onchange="myFunction()">
+            <p>Esse sistema de amortização tem a vantagem em relação ao sistema de pagamento único, pois nele não há incidência de juros sobre juros.</p>
+
+            <p>Os juros sempre incidem sobre o valor original da dívida. Com isso o devedor pode quitar sua dívida quando quiser.</p>
+
+            <p>Tem como desvantagem que o pagamento de juros pode, em tese, ser perpétuo mesmo quando já se pagou o equivalente à dívida em si. Para isso, basta que o número de prestações exceda 100% quando da soma dos juros simples.</p>
+
+            <form>
                 
-                <option value="padrao">Escolher</option>
-                <option value="escolha-1">Em um determinado numero de prestações</option>
-                <option value="escolha-2">De uma vez após um periodo de tempo</option>
+                <div class="form-row">
+                <div class="form-group col-3">
+                            <label for="inputEmprestimo">Empréstimo</label>
+                            <input required min='0' step='0.01' id="inputEmprestimo" type="number" class="form-control" name="valorDaDivida" placeholder="R$">
+                </div>
+                <div class="form-group col-3">
+                            <label for="inputMeses">Prazo</label>
+                            <input required min='1' step='1'id="inputMeses" type="number" class="form-control" name="periodo" placeholder="Meses">
+                </div>
+                <div class="form-group col-3">
+                            <label for="inputTaxa">Taxa de Juros</label>
+                            <input required min='0' step='0.001'id="inputTaxa" type="number" class="form-control" name="taxaJuros" placeholder="%">
+                </div>
+                <div class="form-group  col-3">
+                            <label for="selectPeriodo">Período da Taxa</label>
+                            <select id="selectPeriodo" class="form-control" id="exampleSelect1">
+                                <option>Mensal</option>
+                                <option>Anual</option>
+                            </select>
+                        </div>
+                </div>
                 
-            </select><br>
-            <p id="textoBotaoEscolha-1"></p>
-            <input id="botaoEscolha-1" type="hidden" ><br/>
-            
-            
-            <input type="submit" name="sendForm" value="Enviar"><br/>
-        </form>        
+                <p><input type='submit' style="font-size: 150%;" value='Calcular' class="btn-block" name=""></p>
+
+            </form>        
         
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        </div>
         
-    </div>
+        <%
+        //declaração das variáveis
+        double D=0;         //Divida
+        double P=0;         //Parcelas/Periodo
+        double TJ=0;        //Juros
+        double Prestacao=0; //Prestação
+        double i=0;
+        double totalPrestacao=0;
+        double A = 0;       //Amortização
+        
+        
+        DecimalFormat formato = new DecimalFormat("#.##");
+         
+        try {
+                TJ = Double.parseDouble(request.getParameter("taxaJuros"))/100;
+                D = Double.parseDouble(request.getParameter("valorDaDivida"));
+                P = Double.parseDouble(request.getParameter("periodo"));
+                
+                Prestacao = D*TJ;
+                totalPrestacao= Prestacao*P;
+                
+                } catch (Exception ex) { 
+                     if (request.getParameter("taxa")!=null) {
+            
+            %>
+            %>
+                     <script>
+                        alert("Parâmetro inválido. Digite os dados corretamente.");
+                     </script>  
+             <%
+                     }
+                }
+             %>
+             
+             <table style='border: 1px solid black; border-collapse: collapse; margin-right:auto; margin-left:auto;'>
+                <tr>
+                    <th style='border: 1px solid black; border-collapse: collapse'>Período(meses)</th>
+                    <th style='border: 1px solid black; border-collapse: collapse'>Prestação</th>
+                    <th style='border: 1px solid black; border-collapse: collapse'>Juros</th>
+                    <th style='border: 1px solid black; border-collapse: collapse'>Amortização</th>
+                    <th style='border: 1px solid black; border-collapse: collapse'>Saldo Devedor</th>
+                </tr>
+                <tr style='border: 1px solid black; border-collapse: collapse'>
+                    <td style='border: 1px solid black; border-collapse: collapse'> 0 </td>
+                    <td style='border: 1px solid black; border-collapse: collapse'> - </td>
+                    <td style='border: 1px solid black; border-collapse: collapse'> - </td>
+                    <td style='border: 1px solid black; border-collapse: collapse'> - </td>
+                    <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(D)%></td>
+                </tr>
+                <%for (int x = 1; x <= P; x++) {
+                
+                if(x!=P){%>
+                <tr style='border: 1px solid black; border-collapse: collapse'>
+                        <td style='border: 1px solid black; border-collapse: collapse'><%=x%></td>
+                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(Prestacao)%></td>
+                        <td style='border: 1px solid black; border-collapse: collapse'>% <%=(TJ*100)%></td>
+                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(A)%></td>
+                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(D)%></td>
+
+
+                </tr>
+                <%}else if(x==P){
+                    A=D;
+                %>
+                <tr style='border: 1px solid black; border-collapse: collapse'>
+                        
+                    <td style='border: 1px solid black; border-collapse: collapse'><%=x%></td>
+                    <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(Prestacao)%></td>
+                    <td style='border: 1px solid black; border-collapse: collapse'>% <%=(TJ*100)%></td>
+                    <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(A)%></td>
+                    <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(0)%></td>
+
+
+                </tr>
+                
+                <%}%>
+                <%}%>
+                    <tr style='border: 1px solid black; border-collapse: collapse'>
+                        <td style='border: 1px solid black; border-collapse: collapse'> ∑ →</td>
+                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(totalPrestacao)%></td>
+                        <td style='border: 1px solid black; border-collapse: collapse'>% <%=((TJ*100)*P)%></td>
+                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(D)%></td>
+                        <td style='border: 1px solid black; border-collapse: collapse'>  -  </td>
+                        
+                    </tr>
+            </table>
 
     <div class="container-fluid" id="equipe">
         <h2 id="equipe-logo">EQUIPE</h2>
@@ -140,37 +220,6 @@
             }
          });
          
-        function myFunction() {
-            
-            if(document.getElementById('seletor').value != "padrao") {
-            
-                if(document.getElementById('seletor').value == "escolha-1") {
-            
-                    document.getElementById("textoBotaoEscolha-1").innerHTML = "Insira o numero de prestações";
-                    document.getElementById('botaoEscolha-1').type = 'text';
-                
-                }
-                
-                if(document.getElementById('seletor').value == "escolha-2") {
-                    
-                    document.getElementById("textoBotaoEscolha-1").innerHTML = "Insira quantos meses você ira pagar antes de quitar a sua divida";
-                    document.getElementById('botaoEscolha-1').type = 'text';
-                    
-                }
-                
-            }
-            
-            if(document.getElementById('seletor').value == "padrao") {
-                document.getElementById("textoBotaoEscolha-1").innerHTML = "";
-                document.getElementById('botaoEscolha-1').type = 'hidden';    
-            }
-            
-        }
-        
-       
-
-         
-
     </script>
 
     </body>
