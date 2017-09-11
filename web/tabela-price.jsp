@@ -12,9 +12,9 @@
         <title>Tabela Price</title>
     </head>
     <body
-       <%@include file="WEB-INF/jspf/footer.jspf" %> 
        <%@include file="WEB-INF/jspf/header.jspf" %>
        <%@include file="WEB-INF/jspf/menu.jspf" %>
+       <%@include file="WEB-INF/jspf/footer.jspf" %> 
        <h1><b>Tabela Price</h1></b><br/><br/>
 
         <% 
@@ -77,9 +77,10 @@
                     <td><%=String.format("%.2f", vparc)%></td>
                     <td><%=String.format("%.2f", jur)%></td>
                     <td><%=String.format("%.2f", amort)%></td>
-                   <td><%=String.format("%.2f", saldo)%></td>
+                   <td><%=String.format("%.2f", saldo)%></td><br/><br/>
                 </tr>
-                <%}%>       
+                <%}%>  
+                
                 
     </body>
 </html>
