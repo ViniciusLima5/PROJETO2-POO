@@ -235,14 +235,12 @@ footer {
 
 }
 
-footer h4 {
-	
+footer h4 {	
 	display: inline-block;
 	margin: 0;
 	padding: 25px 10px 25px 0px;
 	vertical-align: middle;
-	font-size: 100%;
-	
+	font-size: 100%;	
 }
 
 
@@ -275,4 +273,26 @@ body {
 	font-size: 250%;
 }
 
+#conteudo label {
+	font-size: 170%;
+}
 
+.btn-block {
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+            transition: all 0.3s;
+}
+
+.btn-block {
+    background: none;
+    border: 2px solid #7C064D;
+    color: black;
+     outline:none;
+}
+.btn-block:hover{
+    color: #FFF;
+    background: #7C064D;
+     outline:none;
+    
+}
