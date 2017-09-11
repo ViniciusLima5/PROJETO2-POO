@@ -10,7 +10,7 @@
             </div>
             
             <div class=" col-md-3 retangulo col-sm-12 col-12 mx-auto">
-                <h4 class="texto"><a href="amortizacao-constante">AMORTIZAÇÃO CONSTANTE</a></h4>
+                <h4 class="texto"><a href="amortizacao-constante.jsp">AMORTIZAÇÃO CONSTANTE</a></h4>
             </div>
             
             <div class=" col-md-3 retangulo col-sm-12 col-12 mx-auto" style="border-left: none;">
