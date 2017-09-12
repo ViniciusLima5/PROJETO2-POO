@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group  col-3">
                             <label for="selectPeriodo">Período da Taxa</label>
-                            <select id="selectPeriodo" class="form-control" id="exampleSelect1">
+                            <select onchange="myFunction()" id="selectPeriodo" class="form-control" id="exampleSelect1">
                                 <option>Mensal</option>
                                 <option>Anual</option>
                             </select>
@@ -95,7 +95,7 @@
              <table class="table table-hover" style="border-color:red;">
                  <thead>
                 <tr>
-                    <th>Período(meses)</th>
+                    <th id="demo">Período(meses)</th>
                     <th>Prestação</th>
                     <th>Juros</th>
                     <th>Amortização</th>
@@ -151,9 +151,11 @@
     
 
     <%@include file="WEB-INF/jspf/footer.jspf" %>
-
-    
-         
+    <script>
+    function myFunction() {
+        var x = document.getElementById("selectPeriodo").value;
+        document.getElementById("demo").innerHTML = "Período("+x+")";
+    }
     </script>
 
     </body>
