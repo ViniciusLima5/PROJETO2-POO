@@ -106,7 +106,7 @@
                  </thead>
                 <tr>
                     <td> 0 </td>
-                    <td > - </td>
+                    <td> - </td>
                     <td> - </td>
                     <td> - </td>
                     <td>R$ <%=formato.format(D)%></td>
@@ -117,7 +117,7 @@
                 <tr >
                         <td ><%=x%></td>
                         <td >R$ <%=formato.format(Prestacao)%></td>
-                        <td >% <%=(TJ*100)%></td>
+                        <td >R$ <%=(TJ*100)%></td>
                         <td >R$ <%=formato.format(A)%></td>
                         <td >R$ <%=formato.format(D)%></td>
 
@@ -130,7 +130,7 @@
                         
                     <td ><%=x%></td>
                     <td >R$ <%=formato.format(Prestacao)%></td>
-                    <td >% <%=(TJ*100)%></td>
+                    <td >R$ <%=(TJ*100)%></td>
                     <td >R$ <%=formato.format(A)%></td>
                     <td >R$ <%=formato.format(0)%></td>
 
@@ -142,7 +142,7 @@
                     <tr>
                         <td > ∑ →</td>
                         <td >R$ <%=formato.format(totalPrestacao)%></td>
-                        <td >% <%=((TJ*100)*P)%></td>
+                        <td >R$ <%=((TJ*100)*P)%></td>
                         <td >R$ <%=formato.format(D)%></td>
                         <td >  -  </td>
                         
