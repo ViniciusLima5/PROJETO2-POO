@@ -35,7 +35,7 @@
 </div>
                 <p><input type='submit' style="font-size: 150%;" value='CALCULAR' class="btn-block" name=""></p>
         </form>
-                
+                <br/>
              
         <%  
                 double i=0, n=0, divida=0, amortizacao=0, juros=0, totala=0, totalj=0, prestacao=0,totalp=0;

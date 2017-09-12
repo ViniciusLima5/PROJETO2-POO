@@ -36,7 +36,7 @@
                 </div>
                 
                 </div>
-                <p><input type='submit' style="font-size: 150%;" value='Calcular' class="btn-block" name=""></p>
+                <p><input type='submit' style="font-size: 150%;" value='CALCULAR' class="btn-block" name=""></p>
                 <br/>
 
             </form>        
