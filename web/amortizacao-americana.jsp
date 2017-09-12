@@ -7,7 +7,7 @@
     
     <%@include file="WEB-INF/jspf/menu.jspf" %>    
         
-    <div class="container" id="explicacao">
+    <div class="container" id="conteudo">
         
             <h2>Amortização Americana</h2>
         
@@ -83,58 +83,70 @@
                 }
              %>
              
-             <table style='border: 1px solid black; border-collapse: collapse; margin-right:auto; margin-left:auto;'>
+             <style>
+                 .table-hover > tbody > tr > td, .table-hover > tbody > tr > th, .table-hover > tfoot > tr > td, .table-hover > tfoot > tr > th, .table-hover > thead > tr > td, .table-hover > thead > tr > th {
+                    border: 1px solid #7C064D;
+                    font-size: 125%;
+                    text-align: center;
+                  }
+             </style>
+             
+             <div class="container">
+             <table class="table table-hover" style="border-color:red;">
+                 <thead>
                 <tr>
-                    <th style='border: 1px solid black; border-collapse: collapse'>Período(meses)</th>
-                    <th style='border: 1px solid black; border-collapse: collapse'>Prestação</th>
-                    <th style='border: 1px solid black; border-collapse: collapse'>Juros</th>
-                    <th style='border: 1px solid black; border-collapse: collapse'>Amortização</th>
-                    <th style='border: 1px solid black; border-collapse: collapse'>Saldo Devedor</th>
+                    <th>Período(meses)</th>
+                    <th>Prestação</th>
+                    <th>Juros</th>
+                    <th>Amortização</th>
+                    <th>Saldo Devedor</th>
                 </tr>
-                <tr style='border: 1px solid black; border-collapse: collapse'>
-                    <td style='border: 1px solid black; border-collapse: collapse'> 0 </td>
-                    <td style='border: 1px solid black; border-collapse: collapse'> - </td>
-                    <td style='border: 1px solid black; border-collapse: collapse'> - </td>
-                    <td style='border: 1px solid black; border-collapse: collapse'> - </td>
-                    <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(D)%></td>
+                 </thead>
+                <tr>
+                    <td> 0 </td>
+                    <td > - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td>R$ <%=formato.format(D)%></td>
                 </tr>
                 <%for (int x = 1; x <= P; x++) {
                 
                 if(x!=P){%>
-                <tr style='border: 1px solid black; border-collapse: collapse'>
-                        <td style='border: 1px solid black; border-collapse: collapse'><%=x%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(Prestacao)%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>% <%=(TJ*100)%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(A)%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(D)%></td>
+                <tr >
+                        <td ><%=x%></td>
+                        <td >R$ <%=formato.format(Prestacao)%></td>
+                        <td >% <%=(TJ*100)%></td>
+                        <td >R$ <%=formato.format(A)%></td>
+                        <td >R$ <%=formato.format(D)%></td>
 
 
                 </tr>
                 <%}else if(x==P){
                     A=D;
                 %>
-                <tr style='border: 1px solid black; border-collapse: collapse'>
+                <tr >
                         
-                    <td style='border: 1px solid black; border-collapse: collapse'><%=x%></td>
-                    <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(Prestacao)%></td>
-                    <td style='border: 1px solid black; border-collapse: collapse'>% <%=(TJ*100)%></td>
-                    <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(A)%></td>
-                    <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(0)%></td>
+                    <td ><%=x%></td>
+                    <td >R$ <%=formato.format(Prestacao)%></td>
+                    <td >% <%=(TJ*100)%></td>
+                    <td >R$ <%=formato.format(A)%></td>
+                    <td >R$ <%=formato.format(0)%></td>
 
 
                 </tr>
                 
                 <%}%>
                 <%}%>
-                    <tr style='border: 1px solid black; border-collapse: collapse'>
-                        <td style='border: 1px solid black; border-collapse: collapse'> ∑ →</td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(totalPrestacao)%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>% <%=((TJ*100)*P)%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(D)%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>  -  </td>
+                    <tr>
+                        <td > ∑ →</td>
+                        <td >R$ <%=formato.format(totalPrestacao)%></td>
+                        <td >% <%=((TJ*100)*P)%></td>
+                        <td >R$ <%=formato.format(D)%></td>
+                        <td >  -  </td>
                         
                     </tr>
             </table>
+             </div>
 
     
 
