@@ -116,7 +116,7 @@
                 <tr >
                         <td ><%=x%></td>
                         <td >R$ <%=formato.format(Prestacao)%></td>
-                        <td >R$ <%=(TJ*100)%></td>
+                        <td ><%=(TJ*100)%>%</td>
                         <td >R$ <%=formato.format(A)%></td>
                         <td >R$ <%=formato.format(D)%></td>
 
@@ -129,7 +129,7 @@
                         
                     <td ><%=x%></td>
                     <td >R$ <%=formato.format(Prestacao)%></td>
-                    <td >R$ <%=(TJ*100)%></td>
+                    <td ><%=(TJ*100)%>%</td>
                     <td >R$ <%=formato.format(A)%></td>
                     <td >R$ <%=formato.format(0)%></td>
 
