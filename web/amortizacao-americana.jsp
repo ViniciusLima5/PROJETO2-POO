@@ -19,6 +19,8 @@
 
             <p>Tem como desvantagem que o pagamento de juros pode, em tese, ser perpétuo mesmo quando já se pagou o equivalente à dívida em si. Para isso, basta que o número de prestações exceda 100% quando da soma dos juros simples.</p>
 
+            <hr>
+            
             <form>
                 
                 <div class="form-row">
