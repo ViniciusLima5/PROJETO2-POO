@@ -19,31 +19,24 @@
         <form>
 
             <div class="form-row">
-                <div class="form-group col-3">
+                <div class="form-group col-4">
                             <label for="inputEmprestimo">Empréstimo</label>
                             <input required min='0' step='0.01' id="inputEmprestimo" type="number" class="form-control" name="divida" placeholder="R$">
                 </div>
-                <div class="form-group col-3">
+                <div class="form-group col-4">
                             <label for="inputMeses">Prazo</label>
                             <input required min='1' step='1'id="inputMeses" type="number" class="form-control" name="n" placeholder="Meses">
                 </div>
-                <div class="form-group col-3">
+                <div class="form-group col-4">
                             <label for="inputTaxa">Taxa de Juros</label>
                             <input required min='0' step='0.001'id="inputTaxa" type="number" class="form-control" name="taxa" placeholder="%">
                 </div>
-                <div class="form-group  col-3">
-                            <label for="selectPeriodo">Período da Taxa</label>
-                            <select id="selectPeriodo" class="form-control" id="exampleSelect1">
-                                <option>Mensal</option>
-                                <option>Anual</option>
-                            </select>
-                        </div>
-                </div>
-
+                
+</div>
                 <p><input type='submit' style="font-size: 150%;" value='CALCULAR' class="btn-block" name=""></p>
         </form>
                 
-             </div>
+             
         <%  
                 double i=0, n=0, divida=0, amortizacao=0, juros=0, totala=0, totalj=0, prestacao=0,totalp=0;
                 DecimalFormat formato = new DecimalFormat("#.##");
@@ -120,7 +113,7 @@
             
                        
                         
-        
+        </div>
         <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>
 </html>
