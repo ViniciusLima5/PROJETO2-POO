@@ -36,9 +36,9 @@
                 </div>
                 <div class="form-group  col-3">
                             <label for="selectPeriodo">Período da Taxa</label>
-                            <select onchange="myFunction()" id="selectPeriodo" class="form-control" id="exampleSelect1">
-                                <option>Mensal</option>
-                                <option>Anual</option>
+                            <select onchange="myFunction()" name="selectPeriodo" id="selectPeriodo" class="form-control">
+                                <option value="1">Mensal</option>
+                                <option value="2">Anual</option>
                             </select>
                         </div>
                 </div>
@@ -66,8 +66,15 @@
                 TJ = Double.parseDouble(request.getParameter("taxaJuros"))/100;
                 D = Double.parseDouble(request.getParameter("valorDaDivida"));
                 P = Double.parseDouble(request.getParameter("periodo"));
+                i = Double.parseDouble(request.getParameter("selectPeriodo"));
                 
-                Prestacao = D*TJ;
+                
+                if(i==1){
+                    Prestacao = D*TJ;
+                }else if(i==2){
+                    Prestacao = (D*TJ)*12;
+                }
+                
                 totalPrestacao= Prestacao*P;
                 
                 } catch (Exception ex) { 
@@ -154,7 +161,11 @@
     <script>
     function myFunction() {
         var x = document.getElementById("selectPeriodo").value;
-        document.getElementById("demo").innerHTML = "Período("+x+")";
+        if(x==1){
+            document.getElementById("demo").innerHTML = "Período(Meses)";
+        } else if(x==2){
+            document.getElementById("demo").innerHTML = "Período(Anual)";
+        }
     }
     </script>
 
