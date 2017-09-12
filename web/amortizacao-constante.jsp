@@ -49,7 +49,7 @@
                      if (request.getParameter("taxa")!=null) {
             
             %>
-            %>
+            
                      <script>
                         alert("Parâmetro inválido. Digite os dados corretamente.");
                      </script>  
@@ -66,6 +66,7 @@
              </style>
              
              <div class="container">
+                 <% if (request.getParameter("taxa") != null || request.getParameter("divida") != null || request.getParameter("n") != null) { %>
                     <table class="table table-hover">
                         <thead>
                     <tr>
@@ -109,6 +110,7 @@
                         
                     </tr>
                 </table>
+                <%}%>
              </div>
             
                        
