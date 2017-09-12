@@ -116,7 +116,7 @@
                 <tr >
                         <td ><%=x%></td>
                         <td >R$ <%=formato.format(Prestacao)%></td>
-                        <td ><%=(TJ*100)%>%</td>
+                        <td >R$ <%=formato.format(Prestacao)%></td>
                         <td >R$ <%=formato.format(A)%></td>
                         <td >R$ <%=formato.format(D)%></td>
 
@@ -124,12 +124,13 @@
                 </tr>
                 <%}else if(x==P){
                     A=D;
+                    totalPrestacao=totalPrestacao+A;
                 %>
                 <tr >
                         
                     <td ><%=x%></td>
+                    <td >R$ <%=formato.format(Prestacao+A)%></td>
                     <td >R$ <%=formato.format(Prestacao)%></td>
-                    <td ><%=(TJ*100)%>%</td>
                     <td >R$ <%=formato.format(A)%></td>
                     <td >R$ <%=formato.format(0)%></td>
 
@@ -141,7 +142,7 @@
                     <tr>
                         <td > ∑ →</td>
                         <td >R$ <%=formato.format(totalPrestacao)%></td>
-                        <td >R$ <%=((TJ*100)*P)%></td>
+                        <td >R$ <%=formato.format(Prestacao*P)%></td>
                         <td >R$ <%=formato.format(D)%></td>
                         <td >  -  </td>
                         
