@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group col-4">
                             <label for="inputTaxa">Taxa de Juros</label>
-                            <input required min='0' step='0.001'id="inputTaxa" type="number" class="form-control" name="taxaJuros" placeholder="%">
+                            <input required min='0' step='0.001'id="inputTaxa" type="number" class="form-control" name="taxaJuros" placeholder="% a.m.">
                 </div>
                 
                 </div>
