@@ -37,6 +37,7 @@
                 
                 </div>
                 <p><input type='submit' style="font-size: 150%;" value='Calcular' class="btn-block" name=""></p>
+                <br/>
 
             </form>        
         
@@ -89,6 +90,7 @@
              </style>
              
              <div class="container">
+                 <% if (request.getParameter("taxaJuros") != null || request.getParameter("valorDaDivida") != null || request.getParameter("periodo") != null) { %>
              <table class="table table-hover" style="border-color:red;">
                  <thead>
                 <tr>
@@ -143,6 +145,7 @@
                         
                     </tr>
             </table>
+                        <%}%>
              </div>
 
     </div>
