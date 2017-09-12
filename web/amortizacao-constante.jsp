@@ -41,6 +41,7 @@
                 </div>
 
                 <p><input type='submit' style="font-size: 150%;" value='CALCULAR' class="btn-block" name=""></p>
+        </form>
                 
              </div>
         <%  
@@ -63,52 +64,63 @@
                      }
                 }
              %>
-                    <table style='border: 1px solid black; border-collapse: collapse; margin-right:auto; margin-left:auto;'>
+                     <style>
+                 .table-hover > tbody > tr > td, .table-hover > tbody > tr > th, .table-hover > tfoot > tr > td, .table-hover > tfoot > tr > th, .table-hover > thead > tr > td, .table-hover > thead > tr > th {
+                    border: 1px solid #7C064D;
+                    font-size: 125%;
+                    text-align: center;
+                  }
+             </style>
+             
+             <div class="container">
+                    <table class="table table-hover">
+                        <thead>
                     <tr>
-                        <th style='border: 1px solid black; border-collapse: collapse'>Período(meses)</th>
-                        <th style='border: 1px solid black; border-collapse: collapse'>Prestação</th>
-                        <th style='border: 1px solid black; border-collapse: collapse'>Juros</th>
-                        <th style='border: 1px solid black; border-collapse: collapse'>Amortização</th>
-                        <th style='border: 1px solid black; border-collapse: collapse'>Saldo Devedor</th>
+                        <th>Período(meses)</th>
+                        <th>Prestação</th>
+                        <th>Juros</th>
+                        <th>Amortização</th>
+                        <th>Saldo Devedor</th>
                     </tr>
-                    <tr style='border: 1px solid black; border-collapse: collapse'>
-                        <td style='border: 1px solid black; border-collapse: collapse'> 0 </td>
-                        <td style='border: 1px solid black; border-collapse: collapse'> - </td>
-                        <td style='border: 1px solid black; border-collapse: collapse'> - </td>
-                        <td style='border: 1px solid black; border-collapse: collapse'> - </td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(divida)%></td>
+                        </thead>
+                    <tr >
+                        <td> 0 </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td>R$ <%=formato.format(divida)%></td>
                     </tr>
                     <%for (int x = 1; x <= n; x++) {%>
-                    <tr style='border: 1px solid black; border-collapse: collapse'>
-                        <td style='border: 1px solid black; border-collapse: collapse'><%=x%></td>
+                    <tr>
+                        <td><%=x%></td>
                         <%prestacao = amortizacao + (divida * i);%>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(prestacao)%></td>
+                        <td>R$ <%=formato.format(prestacao)%></td>
                         <%totalp = prestacao + totalp;
                         juros = divida * i;
                         totalj = juros + totalj;
                         totala=amortizacao+totala;%>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(juros)%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(amortizacao)%></td>
+                        <td>R$ <%=formato.format(juros)%></td>
+                        <td>R$ <%=formato.format(amortizacao)%></td>
                         <%divida = divida - amortizacao;%>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(divida)%></td>
+                        <td>R$ <%=formato.format(divida)%></td>
 
 
                     </tr>
                     <%}%>
-                    <tr style='border: 1px solid black; border-collapse: collapse'>
-                        <td style='border: 1px solid black; border-collapse: collapse'> ∑ →</td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(totalp)%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(totalj)%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>R$ <%=formato.format(totala)%></td>
-                        <td style='border: 1px solid black; border-collapse: collapse'>  -  </td>
+                    <tr>
+                        <td> ∑ →</td>
+                        <td >R$ <%=formato.format(totalp)%></td>
+                        <td >R$ <%=formato.format(totalj)%></td>
+                        <td >R$ <%=formato.format(totala)%></td>
+                        <td >  -  </td>
                         
                     </tr>
                 </table>
-                        </br>
-                        </br>
-                        </br>
+             </div>
+            
+                       
                         
-        </form>
+        
         <%@include file="WEB-INF/jspf/footer.jspf" %>
     </body>
 </html>
