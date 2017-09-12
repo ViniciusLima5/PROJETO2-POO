@@ -57,31 +57,26 @@
         DecimalFormat formato = new DecimalFormat("#.##");
          
         try {
+             if (request.getParameter("taxaJuros") != null || request.getParameter("valorDaDivida") != null || request.getParameter("periodo") != null ){
                 TJ = Double.parseDouble(request.getParameter("taxaJuros"))/100;
                 D = Double.parseDouble(request.getParameter("valorDaDivida"));
                 P = Double.parseDouble(request.getParameter("periodo"));
-                i = Double.parseDouble(request.getParameter("selectPeriodo"));
-                
-                if(i==1){
-                    Periodo="Meses";
-                }else if(i==2){
-                    Periodo="Anual";
-                }
-                
+
                 Prestacao = D*TJ;
                 
                 totalPrestacao= Prestacao*P;
+             }
                 
                 } catch (Exception ex) { 
-                     if (request.getParameter("taxa")!=null) {
+                     
             
             %>
-            %>
+            
                      <script>
                         alert("Parâmetro inválido. Digite os dados corretamente.");
                      </script>  
              <%
-                     }
+                     
                 }
              %>
              
@@ -153,17 +148,7 @@
     </div>
 
     <%@include file="WEB-INF/jspf/footer.jspf" %>
-    <script>
-    function myFunction() {
-        var x = document.getElementById("selectPeriodo").value;
-        if(x==1){
-            document.getElementById("demo").innerHTML = "Período(Meses)";
-        } else if(x==2){
-            document.getElementById("demo").innerHTML = "Período(Anual)";
-        }
-    }
-    </script>
-
+  
     </body>
     
 </html>
