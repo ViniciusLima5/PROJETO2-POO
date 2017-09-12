@@ -58,6 +58,7 @@
         double i=0;
         double totalPrestacao=0;
         double A = 0;       //Amortização
+        String Periodo = "Meses";
         
         
         DecimalFormat formato = new DecimalFormat("#.##");
@@ -68,12 +69,13 @@
                 P = Double.parseDouble(request.getParameter("periodo"));
                 i = Double.parseDouble(request.getParameter("selectPeriodo"));
                 
-                
                 if(i==1){
-                    Prestacao = D*TJ;
+                    Periodo="Meses";
                 }else if(i==2){
-                    Prestacao = (D*TJ)*12;
+                    Periodo="Anual";
                 }
+                
+                Prestacao = D*TJ;
                 
                 totalPrestacao= Prestacao*P;
                 
@@ -102,7 +104,7 @@
              <table class="table table-hover" style="border-color:red;">
                  <thead>
                 <tr>
-                    <th id="demo">Período(meses)</th>
+                    <th id="demo">Período(<%=Periodo %>)</th>
                     <th>Prestação</th>
                     <th>Juros</th>
                     <th>Amortização</th>
