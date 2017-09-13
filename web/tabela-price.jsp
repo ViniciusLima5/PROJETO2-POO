@@ -12,6 +12,7 @@
             <p>O método foi idealizado para pensões e aposentadorias. No entanto, foi a partir da 2ª revolução industrial que sua metodologia de cálculo foi aproveitada para cálculos de amortização de empréstimo.</p>
             <p>A tabela utiliza o regime de juros compostos para calcular o valor das parcelas de um empréstimo e, dessa parcela, há uma proporção relativa ao pagamento de juros e amortização do valor emprestado. </p>
         
+            <hr>
         
              <form>
 
@@ -32,6 +33,9 @@
         </div>
                 <p><input type='submit' style="font-size: 150%;" value='CALCULAR' class="btn-block" name=""></p>
         </form>
+            
+            
+            
         </div>
                 <br/>
              
