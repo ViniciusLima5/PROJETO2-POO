@@ -2,17 +2,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
         <%@include file="WEB-INF/jspf/header.jspf" %>
-    <body
-        <%@include file="WEB-INF/jspf/menu.jspf" %></br></br></br></br>
+        <body>
+        <%@include file="WEB-INF/jspf/menu.jspf" %>
         
-        <div class="container" id="explicacao">
+        <div class="container" id="conteudo">
             
             <h1>Tabela Price</h1>           
             <p>Também chamado de sistema francês de amortização, é um método usado em amortização de empréstimo cuja principal característica é apresentar prestações (ou parcelas) iguais. </p>            
             <p>O método foi idealizado para pensões e aposentadorias. No entanto, foi a partir da 2ª revolução industrial que sua metodologia de cálculo foi aproveitada para cálculos de amortização de empréstimo.</p>
             <p>A tabela utiliza o regime de juros compostos para calcular o valor das parcelas de um empréstimo e, dessa parcela, há uma proporção relativa ao pagamento de juros e amortização do valor emprestado. </p>
-            <p></p>
-        </div>
+        
         
              <form>
 
@@ -33,6 +32,7 @@
         </div>
                 <p><input type='submit' style="font-size: 150%;" value='CALCULAR' class="btn-block" name=""></p>
         </form>
+        </div>
                 <br/>
              
         <%  
