@@ -38,25 +38,16 @@
                 <br/>
              
         <%  
+                
+        if (request.getParameter("taxa") != null && request.getParameter("divida") != null && request.getParameter("n") != null){
+            try {
                 double i=0, n=0, divida=0, amortizacao=0, juros=0, totala=0, totalj=0, prestacao=0,totalp=0;
                 DecimalFormat formato = new DecimalFormat("#.##");
-            try {
                 i = Double.parseDouble(request.getParameter("taxa"))/100;
                 divida = Double.parseDouble(request.getParameter("divida"));
                 n = Double.parseDouble(request.getParameter("n"));
-                amortizacao = divida / n;
-                } catch (Exception ex) { 
-                     if (request.getParameter("taxa")!=null) {
-            
-            %>
-            
-                     <script>
-                        alert("Parâmetro inválido. Digite os dados corretamente.");
-                     </script>  
-             <%
-                     }
-                }
-             %>
+                amortizacao = divida / n;%>
+                
                      <style>
                  .table-hover > tbody > tr > td, .table-hover > tbody > tr > th, .table-hover > tfoot > tr > td, .table-hover > tfoot > tr > th, .table-hover > thead > tr > td, .table-hover > thead > tr > th {
                     border: 1px solid #7C064D;
@@ -66,7 +57,7 @@
              </style>
              
              <div class="container">
-                 <% if (request.getParameter("taxa") != null || request.getParameter("divida") != null || request.getParameter("n") != null) { %>
+                 
                     <table class="table table-hover">
                         <thead>
                     <tr>
@@ -110,10 +101,21 @@
                         
                     </tr>
                 </table>
-                <%}%>
+                
              </div>
+           <% } catch (Exception ex) { 
+                     if (request.getParameter("taxa")!=null) {
             
-                       
+            %>
+            
+                     <script>
+                        alert("Parâmetro inválido. Digite os dados corretamente.");
+                     </script>  
+             <%
+                     }
+                }}
+             %>
+             %>        
                         
         </div>
         <%@include file="WEB-INF/jspf/footer.jspf" %>
